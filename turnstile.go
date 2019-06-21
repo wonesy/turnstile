@@ -14,9 +14,6 @@ type Turnstile struct {
 
 // NewTurnstile ...
 func NewTurnstile(ctx context.Context, size uint32) (*Turnstile, context.Context) {
-	if ctx == nil {
-		return nil, nil
-	}
 	g, c := errgroup.WithContext(ctx)
 	return &Turnstile{
 		group:     g,
