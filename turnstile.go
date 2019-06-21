@@ -34,5 +34,6 @@ func (t *Turnstile) Go(f func() error) {
 
 // Wait ...
 func (t *Turnstile) Wait() error {
+	close(t.semaphore)
 	return t.group.Wait()
 }
